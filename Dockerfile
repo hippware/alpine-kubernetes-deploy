@@ -9,11 +9,12 @@ RUN apk --no-cache --update upgrade && \
         ruby-dev \
         g++ \
         make \
-        ruby-rdoc
+        ruby-rdoc \
+        jq
 
 RUN gem install kubernetes-deploy
 
-ADD https://storage.googleapis.com/kubernetes-release/release/v1.6.4/bin/linux/amd64/kubectl /usr/bin/kubectl
+ADD https://storage.googleapis.com/kubernetes-release/release/v1.11.9/bin/linux/amd64/kubectl /usr/bin/kubectl
 
 RUN chmod u+x /usr/bin/kubectl
 
